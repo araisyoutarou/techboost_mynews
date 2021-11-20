@@ -62,7 +62,7 @@ class ProfileController extends Controller
         unset($profile_form['remove']);
         
         // 該当するデータを上書きして保存する
-        $profile->fil($profile_form)->save();
+        $profile->fill($profile_form)->save();
         
         // 17追記
         $profile_history = new ProfileHistory();
@@ -70,6 +70,6 @@ class ProfileController extends Controller
         $profile_history->edited_at = carbon::now();
         $profile_history->save();
         
-        return redirect('admin/profile/');
+        return redirect()->route('profile.edit', ['id' => $request->id]);
     }
 }
