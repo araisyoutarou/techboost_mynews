@@ -6,7 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Profile extends Model
 {
-    //
+    // モデルとは、データベースの連携をするもの
+    // モデルはテーブルよ紐づいている
+    // find()とは、テーブルからidを使って情報を取得する
     protected $guarded = array('id');
     
     public static $rules = array(
